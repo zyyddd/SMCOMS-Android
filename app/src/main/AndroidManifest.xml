@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.smcoms">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/NoActivityFULLscreen">
+        <activity
+            android:name=".ChangeUser"
+            android:exported="false" />
+        <activity
+            android:name=".AddUser"
+            android:exported="false" />
+        <activity
+            android:name=".ChangeGoods"
+            android:exported="false" />
+        <activity
+            android:name=".AddGoods"
+            android:exported="false" />
+        <activity
+            android:name=".ChangeVip"
+            android:exported="false" />
+        <activity
+            android:name=".AddVip"
+            android:exported="false" />
+        <activity
+            android:name=".Manager"
+            android:exported="false" />
+        <activity
+            android:name=".CheckOut"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.SMCOMS.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".Music"
+            android:enabled="true" />
+    </application>
+
+</manifest>

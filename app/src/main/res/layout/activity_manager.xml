@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerlayout_manager"
+
+    android:background="@mipmap/guanliyuanbizhi"
+    tools:context=".Manager">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_manager"
+                android:layout_width="match_parent"
+
+                app:title="管理员界面"
+                android:background="@color/colorPrimary"
+                android:layout_height="?attr/actionBarSize">
+
+            </androidx.appcompat.widget.Toolbar>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar_manager"
+                android:orientation="horizontal"
+                android:id="@+id/caozuoxuanze">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="会员管理"
+                    android:id="@+id/manager_vip"
+                    android:layout_height="wrap_content">
+                </Button>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="商品管理"
+                    android:id="@+id/manager_goods"
+                    android:layout_height="wrap_content">
+                </Button>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="订单管理"
+                    android:id="@+id/manager_orders"
+                    android:layout_height="wrap_content">
+                </Button>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="用户管理"
+                    android:id="@+id/manager_user"
+                    android:layout_height="wrap_content">
+                </Button>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_below="@id/caozuoxuanze"
+                android:layout_width="wrap_content"
+                android:id="@+id/chaxun"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="请输入查找的编号：">
+                </TextView>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:id="@+id/manager_search_edit"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/manager_search_button"
+                    android:text="查找"
+                    android:layout_marginLeft="10dp">
+
+                </Button>
+
+            </LinearLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/manager_swipe_refresh"
+                android:layout_below="@+id/chaxun"
+                >
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:id="@+id/listview_manager"
+
+                    android:layout_weight="10">
+                </ListView>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/manager_coordlayout"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:src="@drawable/add_goods"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="bottom|end"
+                    app:fabSize="normal"
+                    android:scaleType="center"
+                    android:id="@+id/manager_add"
+
+                    android:layout_height="wrap_content" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <!--这里将headlayout注释掉是为了监听headlayout的子项-->
+    <com.google.android.material.navigation.NavigationView
+
+        android:id="@+id/navigation_view_manage"
+        android:layout_width="match_parent"
+        app:menu="@menu/nav_menu"
+
+
+        android:layout_gravity = "start"
+        android:background="#fff"
+        android:layout_height="match_parent">
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerlayout_checkout"
+
+    android:background="@mipmap/choose"
+    tools:context=".CheckOut">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_checkout"
+                android:layout_width="match_parent"
+                app:title="收银界面"
+                android:background="@color/colorPrimary"
+                android:layout_height="?attr/actionBarSize">
+
+            </androidx.appcompat.widget.Toolbar>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gukexinxi"
+                android:layout_below="@id/toolbar_checkout"
+
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="会员名称:">
+
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vipname"
+                    android:text="游客">
+
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:text="总价:"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/checkout_zongjia"
+                    android:text="*"
+                    android:textSize="25dp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </LinearLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/check_out_swipe_refresh"
+                android:layout_below="@+id/gukexinxi"
+                android:layout_above="@+id/orders_coordlayout">
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:id="@+id/listview_mygoods"
+
+                    android:layout_weight="10">
+                </ListView>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/orders_coordlayout"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:src="@drawable/add_goods"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="bottom|end"
+                    app:fabSize="normal"
+                    android:scaleType="center"
+                    android:id="@+id/floatingbutton_add_goods"
+
+                    android:layout_height="wrap_content" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:src="@drawable/add_vip"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="bottom|left"
+                    app:fabSize="normal"
+                    android:scaleType="center"
+                    android:id="@+id/floatingbutton_add_vip"
+
+                    android:layout_height="wrap_content" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:src="@drawable/jiesuan"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="bottom|center"
+                    app:fabSize="normal"
+                    android:scaleType="center"
+                    android:id="@+id/floatingbutton_jiesuan"
+
+                    android:layout_height="wrap_content" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <!--这里将headlayout注释掉是为了监听headlayout的子项-->
+    <com.google.android.material.navigation.NavigationView
+
+        android:id="@+id/navigation_view"
+        android:layout_width="match_parent"
+        app:menu="@menu/nav_menu"
+
+
+        android:layout_gravity = "start"
+        android:background="#fff"
+        android:layout_height="match_parent">
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

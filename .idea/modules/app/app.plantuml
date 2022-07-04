@@ -1,0 +1,233 @@
+@startuml
+
+title __SMCOMS.APP's Class Diagram__\n
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.AddGoods {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.AddUser {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.AddVip {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.BuildConfig {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.ChangeGoods {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.ChangeUser {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.ChangeVip {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.CheckOut {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.CheckOutAdapter {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.GoodsItem {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.Login {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.MainActivity {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.Manager {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.ManagerGoodsAdapter {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.ManagerOrderAdapter {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.ManagerUserAdapter {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.ManagerVipAdapter {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.Music {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.OrderItem2 {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.OrdersItem {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.UserItem {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    class com.example.smcoms.VipItem {
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    namespace common {
+      class com.example.smcoms.common.CommonMethon {
+      }
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    namespace common {
+      class com.example.smcoms.common.CommonToolbarColor {
+      }
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    namespace database {
+      class com.example.smcoms.database.CommonDatabase {
+      }
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    namespace database {
+      class com.example.smcoms.database.DBOpenHelper {
+      }
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    namespace database {
+      class com.example.smcoms.database.MD5Demo {
+      }
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    namespace database {
+      class com.example.smcoms.database.image_store {
+      }
+    }
+  }
+  
+
+  namespace com.example.smcoms {
+    namespace util {
+      class com.example.smcoms.util.AlertDialogBuilder {
+      }
+    }
+  }
+  
+
+  com.example.smcoms.AddGoods -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.AddUser -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.AddVip -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.ChangeGoods -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.ChangeUser -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.ChangeVip -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.CheckOut -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.CheckOut o-- com.example.smcoms.CheckOutAdapter : c
+  com.example.smcoms.CheckOut o-- com.example.smcoms.database.image_store : imageStore
+  com.example.smcoms.CheckOutAdapter -up-|> android.widget.BaseAdapter
+  com.example.smcoms.CheckOutAdapter o-- com.example.smcoms.CheckOutAdapter.ViewHolder : mViewHolder
+  com.example.smcoms.Login -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.MainActivity o-- com.example.smcoms.database.CommonDatabase : commonDatabase
+  com.example.smcoms.Manager -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.smcoms.Manager o-- com.example.smcoms.database.image_store : imageStore
+  com.example.smcoms.Manager o-- com.example.smcoms.ManagerGoodsAdapter : managerGoodsAdapter
+  com.example.smcoms.Manager o-- com.example.smcoms.ManagerOrderAdapter : managerOrderAdapter
+  com.example.smcoms.Manager o-- com.example.smcoms.ManagerUserAdapter : managerUserAdapter
+  com.example.smcoms.Manager o-- com.example.smcoms.ManagerVipAdapter : managerVipAdapter
+  com.example.smcoms.ManagerGoodsAdapter -up-|> android.widget.BaseAdapter
+  com.example.smcoms.ManagerGoodsAdapter o-- com.example.smcoms.ManagerGoodsAdapter.ViewHolder : mViewHolder
+  com.example.smcoms.ManagerOrderAdapter -up-|> android.widget.BaseAdapter
+  com.example.smcoms.ManagerOrderAdapter o-- com.example.smcoms.ManagerOrderAdapter.ViewHolder : mViewHolder
+  com.example.smcoms.ManagerUserAdapter -up-|> android.widget.BaseAdapter
+  com.example.smcoms.ManagerUserAdapter o-- com.example.smcoms.ManagerUserAdapter.ViewHolder : mViewHolder
+  com.example.smcoms.ManagerVipAdapter -up-|> android.widget.BaseAdapter
+  com.example.smcoms.ManagerVipAdapter o-- com.example.smcoms.ManagerVipAdapter.ViewHolder : mViewHolder
+  com.example.smcoms.Music -up-|> android.app.Service
+  com.example.smcoms.database.CommonDatabase o-- com.example.smcoms.database.DBOpenHelper : dbHelper
+  com.example.smcoms.database.DBOpenHelper -up-|> android.database.sqlite.SQLiteOpenHelper
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

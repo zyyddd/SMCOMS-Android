@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_menu_myinfo"
+            android:icon="@drawable/me"
+            android:title="我的信息"
+            android:checkable="true"
+
+            />
+
+        <item
+            android:id="@+id/nav_menu_changeacc"
+
+            android:icon="@drawable/qiehuan"
+            android:title="切换账户"
+            android:checkable="true"
+
+            />
+
+
+
+    </group>
+
+
+
+
+</menu>
